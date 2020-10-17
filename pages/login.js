@@ -3,10 +3,10 @@ import Layout from "../common/Layout/Layout";
 import Authentification from "../features/Authentification/Authentification";
 import styles from "../styles/Index.module.css";
 
-export default function Index() {
+export default function Login() {
 	return (
 		<Layout>
-			<Authentification />
+			<Authentification login />
 		</Layout>
 	);
 }

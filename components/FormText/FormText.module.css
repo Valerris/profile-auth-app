@@ -1,0 +1,9 @@
+.formText {
+	display: block;
+	margin: 0 0 2.25rem;
+	color: inherit;
+}
+
+.formText:last-child {
+	margin-bottom: 0;
+}

@@ -1,0 +1,14 @@
+.formSmall {
+	display: block;
+	margin: 0 0 0.9rem;
+	color: var(--grey-1);
+	font-size: 0.875rem;
+}
+
+.formSmall--centered {
+	text-align: center;
+}
+
+.formSmall:last-child {
+	margin-bottom: 0;
+}
