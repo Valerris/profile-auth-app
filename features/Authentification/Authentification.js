@@ -1,29 +1,35 @@
-import { default as React } from "react";
 import Link from "next/link";
+import { default as React, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { asyncFetchUser } from "./reducer";
 import Button from "../../components/Button/Button";
 import Form from "../../components/Form/Form";
 import SocialIcon from "../../components/SocialIcon/SocialIcon";
 
-const login = [
-	{
+const fields = {
+	email: {
 		controlId: "email",
 		label: "Email",
 		opts: {
 			type: "email",
 			placeholder: "Email",
-			onClick: (e) => console.log(e.type),
+			value: "",
+			onChange: (e) => {},
 		},
+		ref: React.createRef(),
 	},
-	{
+	password: {
 		controlId: "password",
 		label: "Password",
 		opts: {
 			type: "password",
 			placeholder: "Password",
-			onClick: (e) => console.log(e.type),
+			value: "",
+			onChange: (e) => {},
 		},
+		ref: React.createRef(),
 	},
-];
+};
 
 const icons = [
 	{
@@ -45,10 +51,40 @@ const icons = [
 ];
 
 function Authentification(props) {
-	const controls = login.map((item, i) => (
-		<Form.FormGroup key={item.controlId} controlId={item.controlId}>
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		fields.email.ref.current.focus();
+	}, []);
+
+	fields.email.opts.value = email;
+	fields.password.opts.value = password;
+
+	fields.email.opts.onChange = function (e) {
+		setEmail(e.target.value);
+	};
+
+	fields.password.opts.onChange = function (e) {
+		setPassword(e.target.value);
+	};
+
+	function onFormSubmit(e) {
+		e.preventDefault();
+
+		const payload = { email, password };
+
+		dispatch(asyncFetchUser(payload));
+	}
+
+	const controls = Object.keys(fields).map((item, i) => (
+		<Form.FormGroup
+			key={fields[item].controlId}
+			controlId={fields[item].controlId}
+		>
 			{/* <Form.Label>{item.label}</Form.Label> */}
-			<Form.Control {...item.opts} />
+			<Form.Control ref={fields[item].ref} {...fields[item].opts} />
 		</Form.FormGroup>
 	));
 
@@ -58,7 +94,7 @@ function Authentification(props) {
 		</SocialIcon>
 	));
 
-	return (
+	const authForm = (
 		<Form>
 			<h3>Join thousands of learners from around the world</h3>
 			<Form.Text>
@@ -67,7 +103,7 @@ function Authentification(props) {
 			</Form.Text>
 			{controls ? controls : null}
 			<Form.FormGroup>
-				<Button fullwidth="true" onClick={(e) => e.preventDefault()}>
+				<Button fullwidth="true" onClick={onFormSubmit}>
 					Start coding now
 				</Button>
 				<span></span>
@@ -80,12 +116,14 @@ function Authentification(props) {
 			) : null}
 			<Form.Small centered="true">
 				Adready a member?{" "}
-				<Link href={`/${props.login ? "login" : "register"}`}>
-					<a>{props.login ? "Login" : "Register"}</a>
+				<Link href={`/${props.login ? "register" : "login"}`}>
+					<a>{props.login ? "Register" : "Login"}</a>
 				</Link>
 			</Form.Small>
 		</Form>
 	);
+
+	return authForm;
 }
 
 export default Authentification;

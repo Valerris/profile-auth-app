@@ -6,8 +6,13 @@
 	--grey-1: #828282;
 	--grey-2: #bdbdbd;
 	--blue-1: #2f80ed;
+	--blue-2: #0060df;
+	--blue-3: #67cff3;
+	--blue-4: #0060df4d;
 	--white-1: #fff;
 	--dark-1: #333333;
+	--focus-boxshadow: 0 0 0 4px var(--blue-4);
+	--transition-1: all 0.3s ease;
 }
 
 html,
@@ -31,9 +36,39 @@ body {
 	box-sizing: border-box;
 }
 
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+	outline-offset: 0;
+	border-color: transparent;
+	box-shadow: var(--focus-boxshadow);
+	transition: var(--transition-1);
+}
+
+a,
+input,
+textarea,
+button {
+	transition: var(--transition-1);
+}
+
+*::-moz-focus-inner,
+*::-moz-focus-outer {
+	border: 0;
+}
+
 a {
 	color: var(--blue-1);
 	text-decoration: none;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 1.36;
+	margin: 0 0 0.44rem;
 }
 
 h3 {
@@ -41,8 +76,25 @@ h3 {
 	margin: 0 0 0.9rem;
 }
 
-h3:last-child {
+.sub-header {
+	font-weight: 300;
+	margin: 0 0 2.44rem;
+}
+
+h2,
+.sub-header {
+	text-align: center;
+}
+
+h3:last-child,
+h3:last-child,
+.sub-header:last-child {
 	margin-bottom: 0;
+}
+
+a:active,
+button:active {
+	background-color: var(--blue-2);
 }
 
 .layout {
@@ -71,7 +123,7 @@ h3:last-child {
 
 .material-icons.md-incontrol-icon {
 	position: absolute;
-	left: 0.9rem;
-	bottom: calc(1.55rem / 2);
-	font-size: 1.35rem;
+	left: 0.44rem;
+	bottom: calc(1rem / 2);
+	font-size: 1.25rem;
 }

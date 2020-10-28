@@ -3,7 +3,7 @@ import Layout from "../common/Layout/Layout";
 import Authentification from "../features/Authentification/Authentification";
 import styles from "../styles/Index.module.css";
 
-export default function Login() {
+export default function LoginPage() {
 	return (
 		<Layout>
 			<Authentification login />

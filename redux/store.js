@@ -6,7 +6,7 @@ const devTools = process.env.NODE_ENV !== "production";
 
 const store = configureStore({
 	reducer: rootReducer,
-	preloadedState: initialState,
+	// preloadedState: initialState,
 	devTools,
 });
 
