@@ -2,53 +2,13 @@ import Link from "next/link";
 import { default as React, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { asyncFetchUser } from "./reducer";
-import Button from "../../components/Button/Button";
-import Form from "../../components/Form/Form";
-import SocialIcon from "../../components/SocialIcon/SocialIcon";
+import Button from "components/Button/Button";
+import Form from "components/Form/Form";
+import util from "./util";
+import data from "./data";
 
-const fields = {
-	email: {
-		controlId: "email",
-		label: "Email",
-		opts: {
-			type: "email",
-			placeholder: "Email",
-			value: "",
-			onChange: (e) => {},
-		},
-		ref: React.createRef(),
-	},
-	password: {
-		controlId: "password",
-		label: "Password",
-		opts: {
-			type: "password",
-			placeholder: "Password",
-			value: "",
-			onChange: (e) => {},
-		},
-		ref: React.createRef(),
-	},
-};
-
-const icons = [
-	{
-		href: "https://www.google.com/",
-		icon: <i className="fa fa-google" aria-hidden="true"></i>,
-	},
-	{
-		href: "https://www.facebook.com/",
-		icon: <i className="fa fa-facebook" aria-hidden="true"></i>,
-	},
-	{
-		href: "https://twitter.com/",
-		icon: <i className="fa fa-twitter" aria-hidden="true"></i>,
-	},
-	{
-		href: "https://github.com/",
-		icon: <i className="fa fa-github" aria-hidden="true"></i>,
-	},
-];
+const { fieldsData: fields, iconsData: icons } = data;
+const { createControls, createIcons } = util;
 
 function Authentification(props) {
 	const [email, setEmail] = useState("");
@@ -78,23 +38,11 @@ function Authentification(props) {
 		dispatch(asyncFetchUser(payload));
 	}
 
-	const controls = Object.keys(fields).map((item, i) => (
-		<Form.FormGroup
-			key={fields[item].controlId}
-			controlId={fields[item].controlId}
-		>
-			{/* <Form.Label>{item.label}</Form.Label> */}
-			<Form.Control ref={fields[item].ref} {...fields[item].opts} />
-		</Form.FormGroup>
-	));
+	const controls = createControls(fields);
 
-	const socialIcons = icons.map((item, i) => (
-		<SocialIcon key={i} href={item.href}>
-			{item.icon}
-		</SocialIcon>
-	));
+	const socialIcons = createIcons(icons);
 
-	const authForm = (
+	const UI = (
 		<Form>
 			<h3>Join thousands of learners from around the world</h3>
 			<Form.Text>
@@ -123,7 +71,7 @@ function Authentification(props) {
 		</Form>
 	);
 
-	return authForm;
+	return UI;
 }
 
 export default Authentification;

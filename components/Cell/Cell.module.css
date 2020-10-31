@@ -1,0 +1,33 @@
+.tableCell {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	/* padding: 2.11rem 2.72rem; */
+}
+
+.tableCell > div {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 1.33rem 2.72rem;
+}
+
+.tableCell:first-child {
+	font-size: 0.72rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--grey-2);
+}
+
+.tableCell--cols-2 {
+	flex-grow: 2;
+}
+
+.tableCell--cols-3 {
+	flex-grow: 3;
+}
+
+.tableCell--moveRight {
+	align-items: flex-end;
+}
