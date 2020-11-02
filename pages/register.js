@@ -1,16 +1,13 @@
-import { default as React, useEffect } from "react";
-import Layout from "../common/Layout/Layout";
+import { default as React } from "react";
 import Authentification from "../features/Authentification/Authentification";
-import styles from "../styles/Index.module.css";
+import Layout from "../common/Layout/Layout";
+import Footer from "common/Footer/Footer";
 
 export default function RegisterPage() {
-	// useEffect(() => {
-	// 	api();
-	// }, []);
-
 	return (
-		<Layout>
+		<Layout narrow>
 			<Authentification register />
+			<Footer />
 		</Layout>
 	);
 }

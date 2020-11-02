@@ -1,0 +1,22 @@
+.pic {
+	background-color: var(--grey-2);
+	border-radius: var(--border-R-1);
+	overflow: hidden;
+}
+
+.pic > img {
+	object-fit: cover;
+	object-position: center;
+}
+
+.pic,
+.pic > img {
+	width: 4rem;
+	height: 4rem;
+}
+
+.pic--small,
+.pic--small > img {
+	width: 1.78rem;
+	height: 1.78rem;
+}

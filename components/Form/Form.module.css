@@ -1,6 +1,8 @@
 .form {
 	width: 100%;
-	padding: 3.9rem 1rem;
+	margin: 11rem auto 0;
+	padding: 2.38rem 3.22rem;
 	font-size: 1rem;
-	border-radius: var(--border-R-2);
+	border: 1px solid var(--grey-2);
+	border-radius: var(--border-R-3);
 }

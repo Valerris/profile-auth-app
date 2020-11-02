@@ -1,5 +1,6 @@
 import { default as React } from "react";
 import Table from "components/Table/Table";
+import Pic from "components/Pic/Pic";
 import Button from "components/Button/Button";
 
 export default [
@@ -34,7 +35,7 @@ export default [
 			opts: {
 				cols: 2,
 			},
-			content: '"IMAGE CMP"',
+			content: <Pic src="/letter-b.svg" />,
 		},
 	],
 	[

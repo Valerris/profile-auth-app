@@ -1,11 +1,17 @@
 import { default as React } from "react";
-import Layout from "../common/Layout/Layout";
-import Profile from "../features/Profile/Profile";
+import Topbar from "common/Topbar/Topbar";
+import Layout from "common/Layout/Layout";
+import Footer from "common/Footer/Footer";
+import Profile from "features/Profile/Profile";
 
 export default function ProfilePage() {
 	return (
-		<Layout>
-			<Profile />
-		</Layout>
+		<>
+			<Topbar />
+			<Layout>
+				<Profile />
+				<Footer />
+			</Layout>
+		</>
 	);
 }

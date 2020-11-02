@@ -1,12 +1,13 @@
 import { default as React } from "react";
-import Layout from "../common/Layout/Layout";
 import Authentification from "../features/Authentification/Authentification";
-import styles from "../styles/Index.module.css";
+import Layout from "../common/Layout/Layout";
+import Footer from "common/Footer/Footer";
 
 export default function LoginPage() {
 	return (
-		<Layout>
+		<Layout narrow>
 			<Authentification login />
+			<Footer />
 		</Layout>
 	);
 }

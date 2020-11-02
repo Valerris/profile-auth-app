@@ -1,9 +1,19 @@
-import Head from "next/head";
 import { default as React } from "react";
+import classnames from "classnames";
+import Head from "next/head";
 
-export default function Layout({ title = "Auth App", children }) {
+export default function Layout({
+	title = "Auth App",
+	narrow,
+	children,
+}) {
+	const classes = classnames([
+		"layout",
+		{ ["layout--narrow"]: narrow },
+	]);
+
 	return (
-		<div className="layout">
+		<div className={classes}>
 			<Head>
 				<title>{title}</title>
 				<link

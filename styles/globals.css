@@ -2,6 +2,7 @@
 	font-size: calc(16px + (18 - 16) * (100vw - 320px) / (1366 - 320));
 	--border-R-1: 8px;
 	--border-R-2: 12px;
+	--border-R-3: 24px;
 	--border-R50: 50%;
 	--grey-1: #828282;
 	--grey-2: #bdbdbd;
@@ -69,12 +70,18 @@ h2 {
 	font-size: 2rem;
 	font-weight: 400;
 	line-height: 1.36;
-	margin: 5.66rem 0 0.44rem;
+	margin: 1rem 0 0.44rem;
 }
 
 h3 {
 	font-size: 1.125rem;
 	margin: 0 0 0.9rem;
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: auto;
 }
 
 .sub-header {
@@ -93,7 +100,6 @@ h3:last-child,
 	margin-bottom: 0;
 }
 
-a:active,
 button:active {
 	background-color: var(--blue-2);
 }
@@ -106,6 +112,40 @@ button:active {
 	flex-direction: column;
 	/* justify-content: center;
 	align-items: center; */
+}
+
+.layout--narrow {
+	max-width: 26.33rem;
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.33rem 2.57rem;
+	overflow: hidden;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	/* max-width: 47rem; */
+	/* margin: 0 auto; */
+	padding: 0.77rem 0 13.16rem;
+	color: var(--grey-2);
+}
+
+.logo {
+	display: block;
+	margin: 0 0 1.7rem;
+}
+
+.logo:last-child {
+	margin-bottom: 0;
+}
+
+.logo > a {
+	width: 7.33rem;
 }
 
 .container-row {
@@ -124,7 +164,7 @@ button:active {
 
 .material-icons.md-incontrol-icon {
 	position: absolute;
-	left: 0.44rem;
-	bottom: calc(1rem / 2);
-	font-size: 1.25rem;
+	left: 0.75rem;
+	bottom: calc(1rem / 1.55);
+	font-size: 1.45rem;
 }

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { asyncFetchUser } from "./reducer";
 import Button from "components/Button/Button";
 import Form from "components/Form/Form";
+import Logo from "components/Logo/Logo";
 import util from "./util";
 import data from "./data";
 
@@ -44,6 +45,7 @@ function Authentification(props) {
 
 	const UI = (
 		<Form>
+			<Logo />
 			<h3>Join thousands of learners from around the world</h3>
 			<Form.Text>
 				Master web development by making real-life projects. There are
