@@ -6,6 +6,11 @@
 	position: relative;
 }
 
+.formGroup--row {
+	flex-direction: row;
+	align-items: center;
+}
+
 .formGroup:last-child {
 	margin-bottom: 0;
 }

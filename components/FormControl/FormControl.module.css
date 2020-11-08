@@ -1,9 +1,16 @@
 .control {
 	display: block;
 	width: 100%;
-	padding: 0.72rem 0.72rem 0.72rem 2.61rem;
-	/* font-size: 0.88rem; */
+	padding: 0.72rem;
 	color: var(--grey-1);
 	border: 1px solid var(--grey-2);
 	border-radius: var(--border-R-1);
+}
+
+.control--sm-font {
+	font-size: 0.72rem;
+}
+
+.control--preicon {
+	padding-left: 2.61rem;
 }

@@ -1,6 +1,6 @@
 import { default as React } from "react";
 import Logo from "components/Logo/Logo";
-import Pic from "components/Pic/Pic";
+import ProfileMenu from "features/ProfileMenu/ProfileMenu";
 
 function Topbar() {
 	return (
@@ -9,7 +9,7 @@ function Topbar() {
 				<Logo />
 			</div>
 			<div className="topbar__right">
-				<Pic src="/letter-b.svg" small />
+				<ProfileMenu />
 			</div>
 		</div>
 	);

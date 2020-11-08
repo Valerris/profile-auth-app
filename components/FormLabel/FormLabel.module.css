@@ -1,0 +1,6 @@
+.form-label {
+	color: var(--dark-2);
+	font-size: 0.72rem;
+	font-weight: 500;
+	margin: 0 0 0.22rem;
+}

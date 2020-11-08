@@ -1,8 +1,9 @@
 import { useMemo } from "react";
+import classnames from "classnames";
 import FormContext from "../FormContext/FormContext";
 import styles from "./FormGroup.module.css";
 
-function FormGroup({ controlId, children }) {
+function FormGroup({ controlId, row, children }) {
 	const context = useMemo(
 		() => ({
 			controlId,
@@ -10,9 +11,16 @@ function FormGroup({ controlId, children }) {
 		[controlId]
 	);
 
+	const classes = classnames([
+		[styles.formGroup],
+		{
+			[styles["formGroup--row"]]: row,
+		},
+	]);
+
 	return (
 		<FormContext.Provider value={context}>
-			<div className={styles.formGroup}>{children}</div>
+			<div className={classes}>{children}</div>
 		</FormContext.Provider>
 	);
 }

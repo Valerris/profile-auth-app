@@ -1,7 +1,8 @@
 import { default as React } from "react";
-import Table from "components/Table/Table";
+import Form from "components/Form/Form";
 import Pic from "components/Pic/Pic";
 import Button from "components/Button/Button";
+import Link from "next/link";
 
 export default [
 	[
@@ -11,10 +12,8 @@ export default [
 			},
 			content: (
 				<>
-					<div className={Table.classTableHeader}>Profile</div>
-					<div className={Table.classTableSubheader}>
-						Some info may be visible to other people
-					</div>
+					<h3>Profile</h3>
+					<small>Some info may be visible to other people</small>
 				</>
 			),
 		},
@@ -22,7 +21,11 @@ export default [
 			opts: { moveRight: true },
 			content: (
 				<>
-					<Button>Edit</Button>
+					<Link href="/profile/edit">
+						<a>
+							<Button transparent="true">Edit</Button>
+						</a>
+					</Link>
 				</>
 			),
 		},

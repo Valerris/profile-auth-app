@@ -7,12 +7,14 @@
 	--grey-1: #828282;
 	--grey-2: #bdbdbd;
 	--grey-3: #e0e0e0;
+	--grey-4: #ffffffb3;
 	--blue-1: #2f80ed;
 	--blue-2: #0060df;
 	--blue-3: #67cff3;
 	--blue-4: #0060df4d;
 	--white-1: #fff;
 	--dark-1: #333333;
+	--dark-2: #4f4f4f;
 	--focus-boxshadow: 0 0 0 4px var(--blue-4);
 	--transition-1: all 0.3s ease;
 }
@@ -26,7 +28,7 @@ body {
 		sans-serif;
 	line-height: 1.375;
 	font-weight: 400;
-	letter-spacing: -3.5%;
+	letter-spacing: -0.0625px;
 	color: var(--dark-1);
 }
 
@@ -56,6 +58,10 @@ button {
 	transition: var(--transition-1);
 }
 
+textarea {
+	resize: vertical;
+}
+
 *::-moz-focus-inner,
 *::-moz-focus-outer {
 	border: 0;
@@ -74,8 +80,10 @@ h2 {
 }
 
 h3 {
-	font-size: 1.125rem;
-	margin: 0 0 0.9rem;
+	color: var(--dark-1);
+	font-size: 1.33rem;
+	text-transform: none;
+	margin: 0 0 0.22rem;
 }
 
 img {
@@ -94,10 +102,26 @@ h2,
 	text-align: center;
 }
 
+small {
+	display: block;
+	color: var(--grey-1);
+	font-size: 0.72rem;
+	text-transform: none;
+	margin: 0 0 1.61rem;
+}
+
+small:last-child {
+	margin-bottom: 0;
+}
+
 h3:last-child,
 h3:last-child,
 .sub-header:last-child {
 	margin-bottom: 0;
+}
+
+button {
+	cursor: pointer;
 }
 
 button:active {
@@ -163,8 +187,28 @@ button:active {
 }
 
 .material-icons.md-incontrol-icon {
+	display: none;
 	position: absolute;
 	left: 0.75rem;
 	bottom: calc(1rem / 1.55);
 	font-size: 1.45rem;
+}
+
+.icon--visible {
+	display: inline !important;
+}
+
+span.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 600ms linear;
+	background-color: var(--grey-4);
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
 }
