@@ -2,8 +2,8 @@
 	width: 100%;
 	/* margin: 11rem auto 0; */
 	margin: 0 auto;
-	padding: 2.38rem 3.22rem;
+	padding: 2rem 2.5rem;
 	font-size: 1rem;
 	border: 1px solid var(--grey-2);
-	border-radius: var(--border-R-3);
+	border-radius: var(--border-R-2);
 }

@@ -16,7 +16,7 @@ export default function ProfilePage() {
 				<Form>
 					<h3>Change Info</h3>
 					<small>Changes will be reflected to every services</small>
-					<Form.FormGroup row>
+					<Form.FormGroup row="true" halfWidth="true">
 						<Pic
 							style={{ marginRight: "1.5rem" }}
 							edit="true"
@@ -26,28 +26,44 @@ export default function ProfilePage() {
 							Change photo
 						</Button>
 					</Form.FormGroup>
-					<Form.FormGroup controlId="name">
+					<Form.FormGroup controlId="name" halfWidth="true">
 						<Form.Label>Name</Form.Label>
 						<Form.Control
 							smfont="true"
 							placeholder="Enter your name..."
 						/>
 					</Form.FormGroup>
-					<Form.FormGroup controlId="bio">
+					<Form.FormGroup controlId="bio" halfWidth="true">
 						<Form.Label>Bio</Form.Label>
-						<Form.Control smfont="true" type="textarea" />
+						<Form.Control
+							smfont="true"
+							type="textarea"
+							placeholder="Enter your bio..."
+						/>
 					</Form.FormGroup>
-					<Form.FormGroup controlId="phone">
+					<Form.FormGroup controlId="phone" halfWidth="true">
 						<Form.Label>Phone</Form.Label>
-						<Form.Control smfont="true" type="tel" />
+						<Form.Control
+							smfont="true"
+							type="tel"
+							placeholder="Enter your phone..."
+						/>
 					</Form.FormGroup>
-					<Form.FormGroup controlId="email">
+					<Form.FormGroup controlId="email" halfWidth="true">
 						<Form.Label>Email</Form.Label>
-						<Form.Control smfont="true" type="email" />
+						<Form.Control
+							smfont="true"
+							type="email"
+							placeholder="Enter your email..."
+						/>
 					</Form.FormGroup>
-					<Form.FormGroup controlId="password">
+					<Form.FormGroup controlId="password" halfWidth="true">
 						<Form.Label>Password</Form.Label>
-						<Form.Control smfont="true" type="password" />
+						<Form.Control
+							smfont="true"
+							type="password"
+							placeholder="Enter your password..."
+						/>
 					</Form.FormGroup>
 					<Button type="submit" onClick={(e) => e.preventDefault()}>
 						Save

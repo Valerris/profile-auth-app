@@ -1,5 +1,6 @@
 .formText {
 	display: block;
+	line-height: 1.25rem;
 	margin: 0 0 2.25rem;
 	color: inherit;
 }

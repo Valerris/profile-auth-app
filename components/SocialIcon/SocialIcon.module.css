@@ -8,9 +8,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 2.625rem;
-	height: 2.625rem;
-	margin: 0.625rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: 0.5rem;
 	color: var(--grey-1);
 	border: 1px solid var(--grey-1);
 	border-radius: var(--border-R50);

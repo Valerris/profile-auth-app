@@ -1,6 +1,7 @@
 .pic {
 	background-color: var(--grey-2);
 	border-radius: var(--border-R-1);
+	box-shadow: var(--block-boxshadow);
 	overflow: hidden;
 }
 
@@ -17,8 +18,8 @@
 
 .pic--small,
 .pic--small > img {
-	width: 1.78rem;
-	height: 1.78rem;
+	width: 2rem;
+	height: 2rem;
 }
 
 .pic--edit {

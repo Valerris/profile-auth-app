@@ -2,8 +2,12 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 0.9rem;
+	margin: 0 0 1rem;
 	position: relative;
+}
+
+.formGroup:last-child {
+	margin-bottom: 0;
 }
 
 .formGroup--row {
@@ -11,6 +15,6 @@
 	align-items: center;
 }
 
-.formGroup:last-child {
-	margin-bottom: 0;
+.formGroup--half-width {
+	width: 50%;
 }

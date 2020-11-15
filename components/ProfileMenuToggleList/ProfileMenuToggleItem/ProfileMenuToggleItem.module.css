@@ -1,0 +1,21 @@
+.profileMenuToggleItem {
+	all: unset;
+	display: block;
+	min-width: max-content;
+}
+
+.profileMenuToggleItem a {
+	display: block;
+	padding: 0.75rem 4rem 0.75rem 1rem;
+	color: var(--grey-5);
+	border-radius: var(--border-R-1);
+	cursor: pointer;
+}
+
+.profileMenuToggleItem a:hover {
+	background-color: var(--grey-6);
+}
+
+.profileMenuToggleItem--footer a {
+	color: var(--red-1);
+}

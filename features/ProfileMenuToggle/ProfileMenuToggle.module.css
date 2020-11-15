@@ -1,0 +1,32 @@
+.profileMenuToggle {
+	position: absolute;
+	right: 0;
+	top: calc(100% + 0.25rem);
+	min-width: 8rem;
+	padding: 0.5rem;
+	background-color: #fff;
+	border: 1px solid var(--grey-2);
+	border-radius: var(--border-R-2);
+	box-shadow: var(--block-boxshadow);
+	z-index: var(--z-20);
+	opacity: 0.25;
+	transform: translateY(0.25rem);
+	animation: reveal 0.3s ease forwards;
+}
+
+.profileMenuToggle::after {
+	content: "";
+	position: absolute;
+	top: -0.5rem;
+	left: -0.5rem;
+	right: -0.5rem;
+	bottom: -0.5rem;
+	z-index: var(--z-neg);
+}
+
+@keyframes reveal {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
