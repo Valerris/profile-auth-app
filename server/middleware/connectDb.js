@@ -1,6 +1,10 @@
 import connect from "server/db/connect";
 
-export default async function connectDb(req, res, next) {
+export default async function connectDb(
+	req,
+	res,
+	next = () => undefined
+) {
 	try {
 		const [connection] = await connect();
 
@@ -10,7 +14,7 @@ export default async function connectDb(req, res, next) {
 	} catch (error) {
 		connection.close();
 		return res.status(500).json({
-			error: e.message || "Smth went wrong...",
+			error: e.message || "Can't connect to DB...",
 		});
 	}
 }

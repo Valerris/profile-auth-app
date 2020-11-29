@@ -4,7 +4,7 @@ import FormContext from "../FormContext/FormContext";
 import styles from "./FormControl.module.css";
 
 const Control = React.forwardRef((props, ref) => {
-	const { type, preicon, id, smfont } = props;
+	const { type, title, preicon, id, smfont } = props;
 	const { controlId } = useContext(FormContext);
 	if (!id) {
 		props = { ...props, id: controlId };
@@ -60,6 +60,14 @@ const Control = React.forwardRef((props, ref) => {
 				<>
 					<input ref={ref} className={classes} {...props} />
 				</>
+			);
+			break;
+		case "file":
+			control = (
+				<label className={styles["control--file"]}>
+					<input ref={ref} type="file" {...props} />
+					<span>{title ? title : "Upload"}</span>
+				</label>
 			);
 			break;
 		case "select":

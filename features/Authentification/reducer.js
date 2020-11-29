@@ -44,30 +44,43 @@ const slice = createSlice({
 		setLoading(state) {
 			state.loading = true;
 		},
-		setCredetials(state, { payload }) {
-			state.user.email = payload.email;
-			state.user.password = payload.password;
+		logout(state) {
+			state.loading = false;
+			state.user = null;
+			state.token = null;
+			state.success = false;
+			state.err = null;
 		},
 	},
 	extraReducers: {
 		[asyncFetchUser.pending](state) {
 			state.loading = true;
+			state.user = null;
+			state.token = null;
+			state.success = null;
+			state.err = null;
 		},
 		[asyncFetchUser.fulfilled](state, { payload }) {
 			state.loading = false;
-			state.user = payload;
+			state.err = null;
+			state.user = payload.user;
+			state.token = payload.token;
+			state.success = payload.success;
 
 			console.log(`[reducer ${SLICE_NAME}]: ${payload.message}`);
 		},
 		[asyncFetchUser.rejected](state, { payload }) {
 			state.loading = false;
+			state.user = null;
+			state.token = null;
+			state.success = null;
 			state.err = payload;
 
-			console.error(`[reducer ${SLICE_NAME}]: ${payload.errMessage}`);
+			console.error(`[reducer ${SLICE_NAME}]: ${payload.errMsg}`);
 		},
 	},
 });
 
-export const { setCredetials } = slice.actions;
+export const { logout } = slice.actions;
 
 export default slice.reducer;

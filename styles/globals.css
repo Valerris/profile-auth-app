@@ -158,6 +158,10 @@ textarea {
 	align-items: center; */
 }
 
+.layout:first-child {
+	margin-top: 10rem;
+}
+
 .layout--narrow {
 	max-width: 26.5rem;
 }

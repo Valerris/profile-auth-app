@@ -9,8 +9,10 @@ const fieldsData = {
 			placeholder: "Email",
 			value: "",
 			preicon: "true",
-			onChange: (e) => {},
+			onChange: null,
 		},
+		isError: false,
+		errMsg: "",
 		ref: React.createRef(),
 	},
 	password: {
@@ -21,7 +23,7 @@ const fieldsData = {
 			placeholder: "Password",
 			value: "",
 			preicon: "true",
-			onChange: (e) => {},
+			onChange: null,
 		},
 		ref: React.createRef(),
 	},
@@ -30,19 +32,19 @@ const fieldsData = {
 const iconsData = [
 	{
 		href: "https://www.google.com/",
-		icon: <i className="fa fa-google" aria-hidden="true"></i>,
+		icon: '<i className="fa fa-google" aria-hidden="true"></i>',
 	},
 	{
 		href: "https://www.facebook.com/",
-		icon: <i className="fa fa-facebook" aria-hidden="true"></i>,
+		icon: '<i className="fa fa-facebook" aria-hidden="true"></i>',
 	},
 	{
 		href: "https://twitter.com/",
-		icon: <i className="fa fa-twitter" aria-hidden="true"></i>,
+		icon: '<i className="fa fa-twitter" aria-hidden="true"></i>',
 	},
 	{
 		href: "https://github.com/",
-		icon: <i className="fa fa-github" aria-hidden="true"></i>,
+		icon: '<i className="fa fa-github" aria-hidden="true"></i>',
 	},
 ];
 

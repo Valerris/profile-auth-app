@@ -6,9 +6,16 @@ import Pic from "components/Pic/Pic";
 import Form from "components/Form/Form";
 import Button from "components/Button/Button";
 import Back from "components/Back/Back";
+import Redirect from "components/Redirect/Redirect";
+import { checkAuth } from "utils/checkAuth";
 
-export default function ProfilePage() {
-	return (
+function ProfileEditPage(props) {
+	let { isAuth } = props;
+	isAuth = JSON.parse(isAuth);
+
+	return !isAuth ? (
+		<Redirect to="/login" />
+	) : (
 		<>
 			<Topbar />
 			<Layout>
@@ -22,9 +29,10 @@ export default function ProfilePage() {
 							edit="true"
 							src="/letter-b.svg"
 						/>
-						<Button link="true" onClick={(e) => e.preventDefault()}>
+						{/* <Button link="true" onClick={(e) => e.preventDefault()}>
 							Change photo
-						</Button>
+						</Button> */}
+						<Form.Control type="file" title="Change photo" />
 					</Form.FormGroup>
 					<Form.FormGroup controlId="name" halfWidth="true">
 						<Form.Label>Name</Form.Label>
@@ -32,6 +40,7 @@ export default function ProfilePage() {
 							smfont="true"
 							placeholder="Enter your name..."
 						/>
+						<Form.Hint>name hint...</Form.Hint>
 					</Form.FormGroup>
 					<Form.FormGroup controlId="bio" halfWidth="true">
 						<Form.Label>Bio</Form.Label>
@@ -73,4 +82,17 @@ export default function ProfilePage() {
 			</Layout>
 		</>
 	);
+}
+
+export default ProfileEditPage;
+
+export async function getServerSideProps({ req }) {
+	const { isAuth = false, authToken = null } = await checkAuth(req);
+
+	return {
+		props: {
+			isAuth,
+			authToken,
+		},
+	};
 }

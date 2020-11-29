@@ -1,0 +1,11 @@
+.ErrMsg {
+	padding: 0.5rem 1rem;
+	margin: 0 0 1rem;
+	color: var(--red-1);
+	border: 1px solid var(--red-1);
+	border-radius: var(--border-R-1);
+}
+
+.ErrMsg:last-child {
+	margin-bottom: 0;
+}

@@ -16,3 +16,48 @@
 .control--preicon {
 	padding-left: 2.5rem;
 }
+
+.control--file {
+	position: relative;
+	margin: 0 0 0.9rem;
+	padding: 0;
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	border-radius: initial;
+	color: var(--grey-1);
+	background-color: transparent;
+	text-align: center;
+	border: 0;
+	overflow: hidden;
+	user-select: none;
+}
+
+.control--file:active {
+	box-shadow: var(--focus-boxshadow), var(--block-boxshadow);
+	transition: var(--transition-1);
+}
+
+.control--file:last-child {
+	margin-bottom: 0;
+}
+
+.control--file:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: var(--z-10);
+	cursor: pointer;
+}
+
+.control--file > input {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}

@@ -17,6 +17,7 @@ function getUser(req, res, next) {
 			return console.log(`[ERROR]: ${err}`);
 		}
 
+		let isValid = true;
 		let { email, password } = fields;
 
 		email = validator.normalizeEmail(email);
@@ -29,10 +30,32 @@ function getUser(req, res, next) {
 			validator.isAlphanumeric(password) &&
 			password.length >= 5;
 
-		if (!validatePassword || !validateEmail) {
-			res
-				.status(422)
-				.json({ errMessage: "Invalid email or password." });
+		isValid = validateEmail && validatePassword;
+
+		if (!isValid) {
+			let errMsg = "";
+			let errObj = {};
+			let isError = true;
+
+			if (!validateEmail && !validatePassword) {
+				errMsg = "Invalid email and password.";
+				errObj = {
+					email: { errMsg: "Invalid email." },
+					password: { errMsg: "Invalid password." },
+				};
+			} else if (!validateEmail) {
+				errMsg = "Invalid email.";
+				errObj = { email: { errMsg: "Invalid email." } };
+			} else if (!validatePassword) {
+				errMsg = "Invalid password.";
+				errObj = { password: { errMsg: "Invalid password." } };
+			}
+
+			res.status(422).json({
+				isError,
+				errMsg,
+				errObj,
+			});
 		} else {
 			let user = await User.findOne({ email });
 
@@ -46,7 +69,7 @@ function getUser(req, res, next) {
 					const token = jwt.sign({ _id }, process.env.SECRET_KEY);
 					res.status(200).json({
 						message: "User found.",
-						...user.toJSON(),
+						user,
 						token,
 					});
 				}
@@ -74,6 +97,7 @@ function postUser(req, res, next) {
 			return console.log(`[ERROR]: ${err}`);
 		}
 
+		let isValid = true;
 		let { email, password } = fields;
 
 		email = validator.normalizeEmail(email);
@@ -86,10 +110,32 @@ function postUser(req, res, next) {
 			validator.isAlphanumeric(password) &&
 			password.length >= 5;
 
-		if (!validatePassword || !validateEmail) {
-			res
-				.status(422)
-				.json({ errMessage: "Invalid email or password." });
+		isValid = validateEmail && validatePassword;
+
+		if (!isValid) {
+			let errMsg = "";
+			let errObj = {};
+			let isError = true;
+
+			if (!validateEmail && !validatePassword) {
+				errMsg = "Invalid email and password.";
+				errObj = {
+					email: { errMsg: "Invalid email." },
+					password: { errMsg: "Invalid password." },
+				};
+			} else if (!validateEmail) {
+				errMsg = "Invalid email.";
+				errObj = { email: { errMsg: "Invalid email." } };
+			} else if (!validatePassword) {
+				errMsg = "Invalid password.";
+				errObj = { password: { errMsg: "Invalid password." } };
+			}
+
+			res.status(422).json({
+				isError,
+				errMsg,
+				errObj,
+			});
 		} else {
 			let user = await User.findOne({ email });
 
@@ -102,9 +148,11 @@ function postUser(req, res, next) {
 
 				await user.save();
 
-				res.status(200).json({ message: "User created.", user });
+				res
+					.status(200)
+					.json({ success: true, message: "User created.", user });
 			} else {
-				res.status(422).json({ errMessage: "User already exists." });
+				res.status(422).json({ errMsg: "User already exists." });
 			}
 		}
 

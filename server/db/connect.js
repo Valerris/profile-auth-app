@@ -15,4 +15,5 @@ const connect = async function () {
 
 	return [connection];
 };
+
 export default connect;

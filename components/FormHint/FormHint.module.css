@@ -1,0 +1,11 @@
+.form-hint {
+	display: block;
+	color: var(--grey-1);
+	font-size: 0.75rem;
+	text-transform: none;
+	margin: 0.5rem 0;
+}
+
+.form-hint--error {
+	color: var(--red-1);
+}

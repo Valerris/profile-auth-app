@@ -4,6 +4,7 @@ import FormLabel from "../FormLabel/FormLabel";
 import FormControl from "../FormControl/FormControl";
 import FormText from "../FormText/FormText";
 import FormSmall from "../FormSmall/FormSmall";
+import FormHint from "../FormHint/FormHint";
 import styles from "./Form.module.css";
 
 function Form({ children }) {
@@ -17,5 +18,6 @@ Form.Label = FormLabel;
 Form.Control = FormControl;
 Form.Text = FormText;
 Form.Small = FormSmall;
+Form.Hint = FormHint;
 
 export default Form;

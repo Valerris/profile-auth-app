@@ -7,3 +7,9 @@
 	border: 1px solid var(--grey-2);
 	border-radius: var(--border-R-2);
 }
+
+/* @media (min-width: 40rem) {
+	.form {
+		max-width: 26rem;
+	}
+} */

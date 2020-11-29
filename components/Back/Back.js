@@ -8,7 +8,7 @@ function Back({ content }) {
 				href="#0"
 				onClick={(e) => {
 					e.preventDefault();
-					history.back();
+					window.history.back();
 				}}
 			>
 				{content}
