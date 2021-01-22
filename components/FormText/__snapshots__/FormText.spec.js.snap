@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormText /> should render FormText component with props 1`] = `
+<span
+  className="formText"
+>
+  Form Text
+</span>
+`;
+
+exports[`<FormText /> should render FormText component without props 1`] = `
+<span
+  className="formText"
+/>
+`;

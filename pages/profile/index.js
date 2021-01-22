@@ -2,7 +2,7 @@ import { default as React } from "react";
 import Topbar from "common/Topbar/Topbar";
 import Layout from "common/Layout/Layout";
 import Footer from "common/Footer/Footer";
-import Profile from "features/Profile/Profile";
+import ProfileInfo from "features/Profile/ProfileInfo/ProfileInfo";
 import Redirect from "components/Redirect/Redirect";
 import { checkAuth } from "utils/checkAuth";
 
@@ -14,7 +14,7 @@ function ProfilePage(props) {
 		<>
 			<Topbar />
 			<Layout>
-				<Profile {...props} />
+				<ProfileInfo {...props} />
 				<Footer />
 			</Layout>
 		</>

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileMenuToggleList /> should render ProfileMenuToggleList component 1`] = `
+<ul
+  className="profileMenuToggleList"
+>
+  <ProfileMenuToggleItem
+    href="/profile"
+    key="0"
+    title="My Profile"
+  />
+  <ProfileMenuToggleItem
+    href="/group-chat"
+    key="1"
+    title="Group Chat"
+  />
+  <ProfileMenuToggleItem
+    footer="true"
+    href="/logout"
+    key="2"
+    title="Log out"
+  />
+</ul>
+`;

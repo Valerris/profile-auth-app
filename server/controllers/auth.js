@@ -74,9 +74,7 @@ function getUser(req, res, next) {
 					});
 				}
 			} else {
-				res
-					.status(422)
-					.json({ errMessage: "You are not registered." });
+				res.status(422).json({ errMsg: "You are not registered." });
 			}
 		}
 

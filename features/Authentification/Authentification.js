@@ -39,8 +39,6 @@ function Authentification({
 	let controlsUI = null;
 	let socialIconsUI = null;
 
-	console.log(controls);
-
 	if (!err && register && success) router.push("/login");
 
 	useEffect(() => {
@@ -86,7 +84,8 @@ function Authentification({
 	};
 
 	controlsUI = createControlsUI(controls);
-	const errorMessageUI = !login && err && err.errMsg && (
+
+	const errorMessageUI = err && err.errMsg && (
 		<ErrMsg>{err.errMsg}</ErrMsg>
 	);
 

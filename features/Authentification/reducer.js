@@ -76,7 +76,11 @@ const slice = createSlice({
 			state.success = null;
 			state.err = payload;
 
-			console.error(`[reducer ${SLICE_NAME}]: ${payload.errMsg}`);
+			console.log(payload);
+
+			console.error(
+				`[reducer ${SLICE_NAME}]: ${payload && payload.errMsg}`
+			);
 		},
 	},
 });

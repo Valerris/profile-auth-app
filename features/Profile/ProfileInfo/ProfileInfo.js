@@ -1,7 +1,7 @@
 import data from "./data";
 import createTable from "./util";
 
-function Profile() {
+function ProfileInfo() {
 	const UI = (
 		<>
 			<h2>Personal info</h2>
@@ -15,4 +15,4 @@ function Profile() {
 	return UI;
 }
 
-export default Profile;
+export default ProfileInfo;
